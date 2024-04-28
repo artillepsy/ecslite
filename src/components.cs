@@ -187,7 +187,7 @@ namespace Leopotam.EcsLite {
             if (!_world.IsEntityAliveInternal (entity)) { throw new Exception ("Cant touch destroyed entity."); }
 #endif*/
             if (!_world.IsEntityAliveInternal(entity))
-                false;
+                return false;
             return _sparseItems[entity] > 0;
         }
 
