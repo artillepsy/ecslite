@@ -183,9 +183,11 @@ namespace Leopotam.EcsLite {
 
         [MethodImpl (MethodImplOptions.AggressiveInlining)]
         public bool Has (int entity) {
-#if DEBUG && !LEOECSLITE_NO_SANITIZE_CHECKS
+/*#if DEBUG && !LEOECSLITE_NO_SANITIZE_CHECKS
             if (!_world.IsEntityAliveInternal (entity)) { throw new Exception ("Cant touch destroyed entity."); }
-#endif
+#endif*/
+            if (!_world.IsEntityAliveInternal(entity))
+                false;
             return _sparseItems[entity] > 0;
         }
 
